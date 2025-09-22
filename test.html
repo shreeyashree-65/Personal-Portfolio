@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreeya P S</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0a0f1c;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 15, 28, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: #8892b0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #64ffda;
+        }
+
+        .nav-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #8892b0;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            background: linear-gradient(135deg, #0a0f1c 0%, #1a202c 100%);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            color: #FF1493;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #8892b0;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #64ffda;
+            color: #64ffda;
+        }
+
+        .btn-outline:hover {
+            background: #64ffda;
+            color: #0a0f1c;
+            transform: translateY(-2px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #8892b0;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            padding: 0.5rem;
+        }
+
+        .social-links a:hover {
+            color: #64ffda;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .workspace-img {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background: #1a202c;
+            border-radius: 15px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #8892b0;
+            border: 2px solid rgba(100, 255, 218, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .workspace-img:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(100, 255, 218, 0.1);
+            border-color: rgba(100, 255, 218, 0.3);
+        }
+
+        /* About Section */
+        .about-section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background: #1a202c;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #64ffda;
+            font-weight: bold;
+        }
+
+        .email {
+            color: #8892b0;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .about-text {
+            margin-bottom: 1.5rem;
+            color: #8892b0;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .location {
+            margin-top: 2rem;
+        }
+
+        .location p {
+            color: #8892b0;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-img {
+            width: 350px;
+            height: 350px;
+            background: #0a0f1c;
+            border-radius: 50%;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8892b0;
+            border: 3px solid rgba(100, 255, 218, 0.2);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 30px 60px rgba(100, 255, 218, 0.2);
+            border-color: rgba(100, 255, 218, 0.4);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* Resume Section */
+        .resume-section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background: #0a0f1c;
+        }
+
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .skills-section,
+        .experience-section,
+        .education-section,
+        .capabilities-section,
+        .design-skills-section,
+        .hobbies-section {
+            margin-bottom: 2rem;
+        }
+
+        .skills-section h3,
+        .experience-section h3,
+        .education-section h3,
+        .capabilities-section h3,
+        .design-skills-section h3,
+        .hobbies-section h3 {
+            color: #64ffda;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .skill-bar {
+            height: 3px;
+            background: #1a202c;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: #64ffda;
+            border-radius: 2px;
+            transition: width 1s ease;
+        }
+
+        .experience-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #1a202c;
+            border-radius: 8px;
+            border-left: 3px solid #64ffda;
+        }
+
+        .company-logo {
+            color: #64ffda;
+            font-size: 1.5rem;
+        }
+
+        .experience-details h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .role {
+            color: #8892b0;
+            font-size: 0.8rem;
+        }
+
+        .education-item {
+            background: #1a202c;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid #64ffda;
+        }
+
+        .education-item h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item p {
+            color: #8892b0;
+        }
+
+        .capabilities-list,
+        .design-skills-list {
+            list-style: none;
+        }
+
+        .capabilities-list li,
+        .design-skills-list li {
+            color: #8892b0;
+            margin-bottom: 0.8rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .capabilities-list li:before,
+        .design-skills-list li:before {
+            content: "▸";
+            color: #64ffda;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .hobby-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+            background: #1a202c;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .hobby-item:hover {
+            transform: translateY(-5px);
+            border-color: #64ffda;
+        }
+
+        .hobby-item i {
+            color: #64ffda;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hobby-item span {
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background: #1a202c;
+        }
+
+        .portfolio-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            cursor: pointer;
+            background: #0a0f1c;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            border-color: #64ffda;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .portfolio-overlay h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-overlay p {
+            color: #8892b0;
+        }
+
+        /* X (Twitter) Icon Custom Styling */
+        .fa-x-twitter {
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content,
+            .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .resume-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .hobbies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .workspace-img {
+                max-width: 100%;
+                height: 300px;
+            }
+
+            .profile-img {
+                width: 280px;
+                height: 280px;
+            }
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Additional spacing for workspace section */
+        .hero-image {
+            padding: 2rem 0;
+        }
+
+        /* Profile image container with better spacing */
+        .about-image {
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#resume" class="nav-link">Resume</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+            </div>
+            <div class="nav-contact">
+                <i class="fas fa-phone"></i>
+                <span>+91 7259328026</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section fade-in">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>I am<br><span class="highlight">SHREEYA P S</span></h1>
+                <p class="subtitle">Web3 & Gen AI | Cloud</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-outline" onclick="scrollToSection('resume')">Resume</button>
+                    <button class="btn btn-outline" onclick="scrollToSection('portfolio')">Projects</button>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/shreeya-p-s" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/Shreeyaps" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://github.com/shreeyashree-65" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="workspace-img">
+                    <img src="images/workspace.jpg" alt="Workspace" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2 class="section-title">ABOUT</h2>
+                <p class="email">shreeyashreeyaps@gmail.com</p>
+                <p class="about-text">
+                    Exploring Web3 and AI to craft decentralized solutions that embody trust, transparency, and scalability. Combining a deep interest in cloud technologies with strategic thinking, the focus is on building systems that drive real impact and empower communities globally.
+                </p>
+                <div class="location">
+                    <p>Bengaluru</p>
+                    <p>Karnataka</p>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="profile-img">
+                    <img src="images/profile.png" alt="Shreeya P S" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+        <div class="resume-container">
+            <div class="skills-column">
+                <div class="skills-section">
+                    <h3>TECHNICAL SKILLS</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <i class="fas fa-cloud"></i>
+                            <span>Cloud Technologies</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h3>LANGUAGES</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>English</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Hindi</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Kannada</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h3>PERSONAL SKILLS</h3>
+                    <p style="color: #8892b0;">Innovation • Problem Solving • Leadership</p>
+                </div>
+            </div>
+
+            <div class="experience-column">
+                <div class="experience-section">
+                    <h3>PROJECTS & EXPERIENCE</h3>
+                    <div class="experience-item">
+                        <div class="company-logo">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="experience-details">
+                            <h4>BLOCKCHAIN DEVELOPMENT</h4>
+                            <p class="role">Smart Contract Development</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="company-logo">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="experience-details">
+                            <h4>AI/ML PROJECTS</h4>
+                            <p class="role">Machine Learning & NLP</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="company-logo">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="experience-details">
+                            <h4>CLOUD SOLUTIONS</h4>
+                            <p class="role">AWS & Azure Implementation</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="company-logo">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="experience-details">
+                            <h4>WEB DEVELOPMENT</h4>
+                            <p class="role">Full Stack Development</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-section">
+                    <h3>EDUCATION</h3>
+                    <div class="education-item">
+                        <h4>B.Tech in Computer Science</h4>
+                        <p>University/College Name</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="capabilities-column">
+                <div class="capabilities-section">
+                    <h3>WHAT CAN I DO?</h3>
+                    <ul class="capabilities-list">
+                        <li>Web3 • DApps • Smart Contracts</li>
+                        <li>AI Solutions • ML Models</li>
+                        <li>Cloud Architecture • DevOps</li>
+                    </ul>
+                </div>
+
+                <div class="design-skills-section">
+                    <h3>CORE EXPERTISE</h3>
+                    <ul class="design-skills-list">
+                        <li>Blockchain • Cryptocurrency</li>
+                        <li>Artificial Intelligence • Data Science</li>
+                        <li>Cloud Computing • System Design</li>
+                    </ul>
+                </div>
+
+                <div class="hobbies-section">
+                    <h3>HOBBIES & INTERESTS</h3>
+                    <div class="hobbies-grid">
+                        <div class="hobby-item">
+                            <i class="fas fa-book"></i>
+                            <span>Reading</span>
+                        </div>
+                        <div class="hobby-item">
+                            <i class="fas fa-code"></i>
+                            <span>Coding</span>
+                        </div>
+                        <div class="hobby-item">
+                            <i class="fas fa-music"></i>
+                            <span>Music</span>
+                        </div>
+                        <div class="hobby-item">
+                            <i class="fas fa-plane"></i>
+                            <span>Travel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="portfolio-container">
+            <h2 class="section-title">PROJECTS</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: #0a0f1c; display: flex; align-items: center; justify-content: center; color: #8892b0;">Web3 Project</div>
+                    <div class="portfolio-overlay">
+                        <h3>Decentralized Application</h3>
+                        <p>Blockchain & Smart Contracts</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: #0a0f1c; display: flex; align-items: center; justify-content: center; color: #8892b0;">AI Project</div>
+                    <div class="portfolio-overlay">
+                        <h3>AI/ML Solution</h3>
+                        <p>Machine Learning & NLP</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: #0a0f1c; display: flex; align-items: center; justify-content: center; color: #8892b0;">Cloud Project</div>
+                    <div class="portfolio-overlay">
+                        <h3>Cloud Architecture</h3>
+                        <p>AWS & DevOps</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Navigation highlighting
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Click handlers for navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+    </script>
+</body>
+</html>
